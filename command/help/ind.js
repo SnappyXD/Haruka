@@ -73,4 +73,9 @@ trans = `╭─⬣ *List Menu*
 │ • ${prefix}setname [text] 
 ╰─⬣
 `
+but = [
+          { buttonId: `${prefix}owner`, buttonText: { displayText: '☮︎OWNER☮︎' }, type: 1 },
+          { buttonId: `${prefix}groupsnappy`, buttonText: { displayText: '☕︎GROUP NYA SNAPPY☕︎' }, type: 1 },
+          { buttonId: `${prefix}infobot`, buttonText: { displayText: '♧︎︎︎BOT INFO♧︎︎︎' }, type: 1 },
+        ]
 	}

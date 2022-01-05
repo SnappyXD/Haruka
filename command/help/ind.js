@@ -36,7 +36,7 @@ exports.leave = () =>{
 exports.menu = (prefix, salam, pushname) =>{
 	return`Hi Bangh ${pushname}, selamat ${salam}`
 
-trans =`╭─⬣ *List Menu*
+trans = `╭─⬣ *List Menu*
 │ • ${prefix}menu
 │ • ${prefix}help
 │ • ${prefix}haruka

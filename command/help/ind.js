@@ -1,40 +1,40 @@
 exports.owner = (botname) =>{
-	return` 🙅‍♀️ Command khusus owner ${botname}`
+	return`⚠︎Command Khusus Owner ${botname}⚠︎`
 	}
 exports.admin = (groupName) =>{
-	return`🙅‍♀️ Command khusus admin ${groupName}`
+	return`⚠︎Command Khusus Admin ${groupName}⚠︎`
 	}
 exports.adminB = () =>{
-	return`⚠️ Bot bukan admin grup`
+	return`⚠︎Bot Bukan Admin⚠︎`
 	}
 exports.err = () =>{
-	return`⚠️ Fitur ini sedang eror !`
+	return`⚠︎Fitut Error Bangh⚠︎`
 	}
 exports.group = () =>{
-	return`🙅‍♀️ Command khusus di dalam group`
+	return`⚠︎Command Khusus Dalam Group⚠︎`
 	}
 
 exports.wait = () =>{
-	return`⏳ Sedang di proses ~`
+	return`➪Sedang Proses Bangh`
 	}
 exports.ok = () =>{
-	return` ✅ Oke done ~`
+	return` Okh Done Bangh✈︎`
 	}
 exports.welcome = () =>{
-	return`Jangan Lupa Intro Ya~
+	return`Jangan Lupa Intro Bangh🗿~
 ⌯ָ   ֙Nama :
 ⌯ָ   ֙Umur :
 ⌯ָ   ֙Kelamin :
 ⌯ָ   ֙Askot :
-╰─ ᝬ _Patuhi Rules Group Ya_  >_<`
+╰─ ᝬ _Patuhi Rules Group Bangh🗿`
       }
 exports.leave = () =>{
 	return`
 │
-╰─ ᝬ _Balik Lagi Wajib Donasi Ya_ >_<`
+╰─ ᝬ _Balik Lagi Kusantet Bangh🗿`
 }
 exports.menu = (prefix, salam, pushname) =>{
-	return`Hi ${pushname}, selamat ${salam}
+	return`Hi Bangh ${pushname}, selamat ${salam}
 
 ╭─⬣ *List Menu*
 │ • ${prefix}menu

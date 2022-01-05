@@ -635,43 +635,24 @@ case 'setdesc': case 'setdesk':
 					await haruka.groupUpdateDescription(from, `${q}`)
 					haruka.sendMessage(from, `Sukses Mengubah Desk Grup Menjadi ${q}`, text, { quoted: mek })
 			break 
-case prefix+'add':
-                if (!isGroup) return reply(mess.OnlyGrup)
-                if (!isGroupAdmins && !isOwner)return reply(mess.GrupAdmin)
-                if (!isBotGroupAdmins) return reply(mess.BotAdmin)
-				if (isQuotedMsg && args.length < 2) {
-                    haruka.groupAdd(from, [quotedMsg.sender])
-                    .then((res) => reply(jsonformat(res)))
-                    .catch((err) => reply(jsonformat(err)))
-                } else if (args.length < 3 && !isNaN(args[1])){
-					haruka.groupAdd(from, [args[1] + '@s.whatsapp.net'])
-					.then((res) => reply(jsonformat(res)))
-					.catch((err) => reply(jsonformat(err)))
-				} else {
-					reply()
-				}
-                break
-case prefix+'kick':
-                if (!isGroup) return reply(mess.OnlyGrup)
-                if (!isGroupAdmins && !isOwner)return reply(mess.GrupAdmin)
-                if (!isBotGroupAdmins) return reply(mess.BotAdmin)
-                if (mentioned.length !== 0){
-                    haruka.groupRemove(from, mentioned)
-                    .then((res) => reply(jsonformat(res)))
-                    .catch((err) => reply(jsonformat(err)))
-                } else if (isQuotedMsg) {
-                    if (quotedMsg.sender === ownerNumber) return reply(`Tidak bisa kick Owner`)
-                    haruka.groupRemove(from, [quotedMsg.sender])
-                    .then((res) => reply(jsonformat(res)))
-                    .catch((err) => reply(jsonformat(err)))
-                } else if (!isNaN(args[1])) {
-                    haruka.groupRemove(from, [args[1] + '@s.whatsapp.net'])
-                    .then((res) => reply(jsonformat(res)))
-                    .catch((err) => reply(jsonformat(err)))
-                } else {
-                    reply(`Kirim perintah ${prefix}kick @tag atau nomor atau reply pesan orang yang ingin di kick`)
-                }
-                break
+case 'add':
+			if (!isGroup) return reply(lang.group())
+			if (!isGroupAdmins) return reply(lang.admin(groupName))
+			if (!isBotGroupAdmins) return reply(lang.adminB())
+			if(!q)return reply(`*Format salah!*\n\n*Example : ${prefix + command} +62xxxx*`)
+			var addya = q.split('@')[1] + '@s.whatsapp.net'
+			await haruka.groupAdd(from, [addya])
+			reply(`Succses add target!`)
+break
+case 'kick':
+			if (!isGroup) return reply(lang.group())
+			if (!isGroupAdmins) return reply(lang.admin(groupName))
+			if (!isBotGroupAdmins) return reply(lang.adminB())
+			if(!q)return reply(`*Format salah!*\n\n*Example : ${prefix + command} @tag*`)
+			var kickya = q.split('@')[1] + '@s.whatsapp.net'
+			await haruka.groupRemove(from, [kickya])
+			reply(`Succses kick target!`)
+break
 case 'bc': case 'broadcast':
 			if (!isOwner) return reply(lang.owner(botname))
 			if (args.length === 0) return reply(`Kirim perintah *${prefix + command}* text`)

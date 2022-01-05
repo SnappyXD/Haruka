@@ -635,15 +635,6 @@ case 'setdesc': case 'setdesk':
 					await haruka.groupUpdateDescription(from, `${q}`)
 					haruka.sendMessage(from, `Sukses Mengubah Desk Grup Menjadi ${q}`, text, { quoted: mek })
 			break 
-case 'add':
-			if (!isGroup) return reply(lang.group())
-			if (!isGroupAdmins) return reply(lang.admin(groupName))
-			if (!isBotGroupAdmins) return reply(lang.adminB())
-			if(!q)return reply(`*Format salah!*\n\n*Example : ${prefix + command} +62xxxx*`)
-			var addya = q.split('@')[1] + '@s.whatsapp.net'
-			await haruka.groupAdd(from, [addya])
-			reply(`Succses add target!`)
-break
 case 'kick':
 			if (!isGroup) return reply(lang.group())
 			if (!isGroupAdmins) return reply(lang.admin(groupName))

@@ -42,7 +42,6 @@ const moment = require('moment-timezone')
 const request = require('request')
 const speed = require('performance-now')
 const util = require('util')
-const xa = require('xfarr-api')
 const yts = require( 'yt-search')
 
 //library
@@ -320,11 +319,11 @@ const salam = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('a')
 		
 //colong aja bang, ingat jgn asal colong ntr sc lu error
 switch (command) {
-case 'menu': case 'help': case 'haruka':
+case 'menu': case 'help': case 'snappy':
 				sendButLocation(from, lang.menu(prefix, salam, pushname), '© ' + ownername, thumbnail, [{buttonId: '.owner', buttonText: {displayText: 'Owner'}, type: 1},{buttonId: '.infobot', buttonText:{displayText: 'Infobot'}, type: 1}], {quoted: mek})
 				break
 case 'infobot':
-reply('Update bot selanjutnya silahkan cek YouTube zeeone ofc')
+reply('Update Bot Kang Rrcode Snappy')
 break
 case 'owner':{
 		const ownerContact = [ownernumber, "", "", "", "", "", "", "", "", "", "" , "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
@@ -340,7 +339,7 @@ case 'owner':{
 					"displayName": `${ini_list.length} kontak`,
 					"contacts": ini_list 
 					}, 'contactsArrayMessage', { quoted: mek })
-					haruka.sendMessage(from, `Nih Kak Contact Owner Ku, Cuma Sv Nomor Cewe Ya 🤝`, text, {quoted: hehe})
+					haruka.sendMessage(from, `Nih Bangh Contact Owner Ku, Cuma Sv Nomor Cewe Ya Awoakwok 🤝`, text, {quoted: hehe})
 				}
 			break
 case 'sticker':case 'stiker':case 'stickergif':case 'stikergif':case 'sgif':case 's':
@@ -635,16 +634,44 @@ case 'setdesc': case 'setdesk':
 			if (!isBotGroupAdmins) return reply(lang.adminB())
 					await haruka.groupUpdateDescription(from, `${q}`)
 					haruka.sendMessage(from, `Sukses Mengubah Desk Grup Menjadi ${q}`, text, { quoted: mek })
-			break   
-case 'kick':
-			if (!isGroup) return reply(lang.group())
-			if (!isGroupAdmins) return reply(lang.admin(groupName))
-			if (!isBotGroupAdmins) return reply(lang.adminB())
-			if(!q)return reply(`*Format salah!*\n\n*Example : ${prefix + command} @tag*`)
-			var kickya = q.split('@')[1] + '@s.whatsapp.net'
-			await haruka.groupRemove(from, [kickya])
-			reply(`Succses kick target!`)
-break
+			break 
+case prefix+'add':
+                if (!isGroup) return reply(mess.OnlyGrup)
+                if (!isGroupAdmins && !isOwner)return reply(mess.GrupAdmin)
+                if (!isBotGroupAdmins) return reply(mess.BotAdmin)
+				if (isQuotedMsg && args.length < 2) {
+                    haruka.groupAdd(from, [quotedMsg.sender])
+                    .then((res) => reply(jsonformat(res)))
+                    .catch((err) => reply(jsonformat(err)))
+                } else if (args.length < 3 && !isNaN(args[1])){
+					haruka.groupAdd(from, [args[1] + '@s.whatsapp.net'])
+					.then((res) => reply(jsonformat(res)))
+					.catch((err) => reply(jsonformat(err)))
+				} else {
+					reply()
+				}
+                break
+case prefix+'kick':
+                if (!isGroup) return reply(mess.OnlyGrup)
+                if (!isGroupAdmins && !isOwner)return reply(mess.GrupAdmin)
+                if (!isBotGroupAdmins) return reply(mess.BotAdmin)
+                if (mentioned.length !== 0){
+                    haruka.groupRemove(from, mentioned)
+                    .then((res) => reply(jsonformat(res)))
+                    .catch((err) => reply(jsonformat(err)))
+                } else if (isQuotedMsg) {
+                    if (quotedMsg.sender === ownerNumber) return reply(`Tidak bisa kick Owner`)
+                    haruka.groupRemove(from, [quotedMsg.sender])
+                    .then((res) => reply(jsonformat(res)))
+                    .catch((err) => reply(jsonformat(err)))
+                } else if (!isNaN(args[1])) {
+                    haruka.groupRemove(from, [args[1] + '@s.whatsapp.net'])
+                    .then((res) => reply(jsonformat(res)))
+                    .catch((err) => reply(jsonformat(err)))
+                } else {
+                    reply(`Kirim perintah ${prefix}kick @tag atau nomor atau reply pesan orang yang ingin di kick`)
+                }
+                break
 case 'bc': case 'broadcast':
 			if (!isOwner) return reply(lang.owner(botname))
 			if (args.length === 0) return reply(`Kirim perintah *${prefix + command}* text`)
@@ -677,7 +704,7 @@ if (budy.startsWith('$')){
 if (!isOwner) return reply(lang.owner(botname))
 qur = budy.slice(2)
 exec(qur, (err, stdout) => {
-if (err) return reply(`HarukaBot :~ ${err}`)
+if (err) return reply(`SnapBotzz :~ ${err}`)
 if (stdout) {
 reply(stdout)
 }

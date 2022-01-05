@@ -9,7 +9,7 @@ CFonts.say('Haruka Bot', {
   align: 'center',
   gradient: ['red', 'magenta']
 })
-CFonts.say(`Bot WhatsApp Created By ZeeoneOfc`, {
+CFonts.say(`Bot WhatsApp Created By SnappyXD`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']

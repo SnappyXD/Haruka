@@ -69,7 +69,6 @@ exports.menu = (prefix, salam, pushname) =>{
 │ • ${prefix}linkgrup
 │ • ${prefix}tagall
 │ • ${prefix}kick @tag
-│ • ${prefix}add +62xxx
 │ • ${prefix}setdesc [text] 
 │ • ${prefix}setname [text] 
 ╰─⬣

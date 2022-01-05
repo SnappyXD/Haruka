@@ -634,7 +634,7 @@ case 'setdesc': case 'setdesk':
 			if (!isBotGroupAdmins) return reply(lang.adminB())
 					await haruka.groupUpdateDescription(from, `${q}`)
 					haruka.sendMessage(from, `Sukses Mengubah Desk Grup Menjadi ${q}`, text, { quoted: mek })
-			break 
+			break
 case 'kick':
 			if (!isGroup) return reply(lang.group())
 			if (!isGroupAdmins) return reply(lang.admin(groupName))
@@ -662,6 +662,22 @@ case 'bc': case 'broadcast':
 						reply('Sukses broadcast')
 					}
 					break               
+					case 'groupsnappy':
+simple.updatePresence(from, Presence.recording)
+emm =
+`_*HALO BWANG*_`
+oy =`
+https://chat.whatsapp.com/BEwgAoBV2r92GXyaLQtIfq
+
+_Ga Join Ga Kawan_
+_*LANJUT? KLIK BUTTON DI BAWAH*_
+`
+but = [
+          { buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 }, 
+          { buttonId: `${prefix}infobot`, buttonText: { displayText: 'INFO BOT' }, type: 1 }
+        ]
+         sendButton(from, emm, oy, but)
+break
 		default:
 if (budy.startsWith('>')){
 try {

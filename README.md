@@ -41,7 +41,7 @@
 
 Click the deploy icon below !
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/zeeoneofc/Haruka)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/SnappyXD/botsaha)
 
 ```bash
  > heroku/nodejs
@@ -64,9 +64,9 @@ You can edit owner and other in `'./settings/config.json'`
 
 ```ts
 {
-	"ownername":"ZeeoneOfc",
+	"ownername":"SnappyXD",
 	"ownernumber":"62887435047326",
-	"botname":"Haruka-Bot",
+	"botname":"SnapBotzz",
 	"thumbnail":"./settings/haruka.jpg",
 	"session_name":"./session.json"
 }

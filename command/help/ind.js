@@ -34,9 +34,9 @@ exports.leave = () =>{
 ╰─ ᝬ _Balik Lagi Kusantet Bangh🗿`
 }
 exports.menu = (prefix, salam, pushname) =>{
-	return`Hi Bangh ${pushname}, selamat ${salam}
+	return`Hi Bangh ${pushname}, selamat ${salam}`
 
-╭─⬣ *List Menu*
+trans =`╭─⬣ *List Menu*
 │ • ${prefix}menu
 │ • ${prefix}help
 │ • ${prefix}haruka

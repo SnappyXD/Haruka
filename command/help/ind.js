@@ -33,10 +33,9 @@ exports.leave = () =>{
 │
 ╰─ ᝬ _Balik Lagi Kusantet Bangh🗿`
 }
-exports.menu = (prefix, salam, pushname) =>{
-	return`Hi Bangh ${pushname}, selamat ${salam}`
-
-trans = `╭─⬣ *List Menu*
+exports.menu = (prefix, salam,  pushname, oy) =>{
+	return`Hi Bangh ${pushname}, selamat ${salam}
+╭─⬣ *List Menu*
 │ • ${prefix}menu
 │ • ${prefix}help
 │ • ${prefix}haruka
@@ -73,9 +72,4 @@ trans = `╭─⬣ *List Menu*
 │ • ${prefix}setname [text] 
 ╰─⬣
 `
-but = [
-          { buttonId: `${prefix}owner`, buttonText: { displayText: '☮︎OWNER☮︎' }, type: 1 },
-          { buttonId: `${prefix}groupsnappy`, buttonText: { displayText: '☕︎GROUP NYA SNAPPY☕︎' }, type: 1 },
-          { buttonId: `${prefix}infobot`, buttonText: { displayText: '♧︎︎︎BOT INFO♧︎︎︎' }, type: 1 },
-        ]
 	}

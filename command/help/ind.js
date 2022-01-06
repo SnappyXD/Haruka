@@ -59,9 +59,11 @@ exports.menu = (prefix, salam,  pushname, oy) =>{
 ├ *Owner*
 │ • ${prefix}broadcast [text]
 │ • ${prefix}leave
+│ • ${prefix}gift
+│ • ${prefix}piltek
 │ • >
 │ • $
-│ •  => 
+│ •  =>
 │
 ├ *Group*
 │ • ${prefix}hidetag [text]

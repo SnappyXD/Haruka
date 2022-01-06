@@ -77,14 +77,14 @@ const salam = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('a')
 				const haruka = new WAConnection()
 				haruka.version = [2, 2143, 3] 
 				haruka.logger.level = 'warn'
-				console.log(color(figlet.textSync('Haruka-Bot', {
+				console.log(color(figlet.textSync('SnapBotzz', {
 					font: 'Standard',
 					horizontalLayout: 'default',
 					vertivalLayout: 'default',
 					whitespaceBreak: false
 					}), 'skyblue'))
 				haruka.on('qr', () => {
-					console.log(color('[','white'), color('!','red'), color(']','white'), color('SCAN QR MASK 15 SECONDS, AND SUBSCRIBE YOUTUBE ZEEONE OFC'))
+					console.log(color('[','white'), color('!','red'), color(']','white'), color('SCAN QR MASK 15 SECONDS, AND SUBSCRIBE YOUTUBE ZEEONE SNAPDXKZ'))
 					})
 			fs.existsSync(`./settings/${session_name}`) && haruka.loadAuthInfo(`./settings/${session_name}`)
 			haruka.on('connecting', () => {
@@ -661,23 +661,7 @@ case 'bc': case 'broadcast':
 						}
 						reply('Sukses broadcast')
 					}
-					break               
-					case 'groupsnappy':
-simple.updatePresence(from, Presence.recording)
-emm =
-`_*HALO BWANG*_`
-oy =`
-https://chat.whatsapp.com/BEwgAoBV2r92GXyaLQtIfq
-
-_Ga Join Ga Kawan_
-_*LANJUT? KLIK BUTTON DI BAWAH*_
-`
-but = [
-          { buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 }, 
-          { buttonId: `${prefix}infobot`, buttonText: { displayText: 'INFO BOT' }, type: 1 }
-        ]
-         sendButton(from, emm, oy, but)
-break
+					break
 		default:
 if (budy.startsWith('>')){
 try {

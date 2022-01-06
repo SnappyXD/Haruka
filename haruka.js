@@ -4,7 +4,7 @@ let { spawn } = require('child_process')
 let path = require('path')
 let fs = require('fs')
 const CFonts  = require('cfonts')
-CFonts.say('Haruka Bot', {
+CFonts.say('SnapBotzz', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']

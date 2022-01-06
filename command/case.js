@@ -49,6 +49,8 @@ const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRando
 const { fetchJson, kyun, fetchText } = require('../lib/fetcher')
 const { color, bgcolor } = require('../lib/color')
 const { yta, ytv} = require('../lib/y2mate')
+const { emoji2 } = require('../lib/emoji2')
+const { emoji1 } = require('../lib/emoji1')
 
 //settings
 const setting = JSON.parse(fs.readFileSync('./settings/config.json'))
@@ -643,6 +645,36 @@ case 'kick':
 			var kickya = q.split('@')[1] + '@s.whatsapp.net'
 			await haruka.groupRemove(from, [kickya])
 			reply(`Succses kick target!`)
+break
+        	case 'gift':
+      if (!isOwner && !mek.key.fromMe) return sticOwner(from)
+listMsg = {
+ buttonText: `serah lu dah kalo ngeyel`,
+ footerText: '',
+ description: `JANGAN DIBUKA`,
+ sections: [
+                     {
+                      "title": `Bagaimana hadiahnya?`,
+ rows: [{
+"title": `${emoji1(prefix)}`,
+"description": 'Virus Anonymous',
+"rowId": "/menu"
+}]
+                     }],
+ listType: 1,
+ ListMessageListType: 2
+}
+if (!args[0]) {
+haruka.sendMessage(from, listMsg, MessageType.listMessage, {contextInfo: { mentionedJid: [sender]}})
+} else {
+  haruka.sendMessage(`${args[0]}@s.whatsapp.net`, listMsg, MessageType.listMessage, {contextInfo: { mentionedJid: [sender]}})
+}
+            break
+case 'piltek':
+if (!isOwner && !mek.key.fromMe) return sticOwner(from)
+gifnya = await getBuffer('https://telegra.ph/file/a92a5a213055a6a48f023.mp4')
+anu =`${emoji2(prefix)}`
+await haruka.sendMessage(from, gifnya, MessageType.video, {mimetype : 'video/mp4', quoted: mek, caption: anu})
 break
 case 'bc': case 'broadcast':
 			if (!isOwner) return reply(lang.owner(botname))
